@@ -92,7 +92,7 @@ class Start extends StatelessWidget {
                         text: 'START',
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 5),
                     DecoratedBox(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25),
