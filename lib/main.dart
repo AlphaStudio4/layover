@@ -17,10 +17,13 @@ import 'package:layover/screens/premium/premium_screen.dart';
 import 'package:layover/screens/splash/splash_screen.dart';
 
 import 'blocs/chatlist/chat_bloc.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const MyApp());
 }
