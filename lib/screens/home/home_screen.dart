@@ -97,7 +97,6 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         signOut();
       }
     }
-    signOut();
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'Layover',

@@ -30,51 +30,61 @@ class SingleMessage extends StatelessWidget {
           child: Row(
             children: [
               !isMe
-                  ? Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: CircleAvatar(
-                        radius: 15,
-                        backgroundImage: NetworkImage(image),
-                      ))
-                  : const Text(''),
-              !isImage
-                  ? Row(
-                      children: [
-                        Container(
-                          width: 100,
-                        ),
-                        Container(
-                            padding: const EdgeInsets.only(
-                                left: 16.0, right: 16.0, top: 12.0, bottom: 8),
-                            decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(7.0),
-                              ),
-                              color: isMe
-                                  ? theme().backgroundColor
-                                  : theme().primaryColor,
+                  ? !isImage
+                      ? Row(
+                          children: [
+                            Container(
+                              width: 100,
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                (messages.length > 17)
-                                    ? Container(
-                                        width: 200,
-                                        child: Text(
-                                          messages,
-                                          style: theme()
-                                              .textTheme
-                                              .headline6!
-                                              .copyWith(
-                                                  color: isMe
-                                                      ? Color.fromARGB(
-                                                          255, 3, 0, 0)
-                                                      : Colors.white,
-                                                  fontSize: 17),
-                                        ),
-                                      )
-                                    : Text(
-                                        messages,
+                            Container(
+                                padding: const EdgeInsets.only(
+                                    left: 16.0,
+                                    right: 16.0,
+                                    top: 12.0,
+                                    bottom: 8),
+                                decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(7.0),
+                                  ),
+                                  color: isMe
+                                      ? theme().backgroundColor
+                                      : theme().primaryColor,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    (messages.length > 17)
+                                        ? Container(
+                                            width: 200,
+                                            child: Text(
+                                              messages,
+                                              style: theme()
+                                                  .textTheme
+                                                  .headline6!
+                                                  .copyWith(
+                                                      color: isMe
+                                                          ? Color.fromARGB(
+                                                              255, 3, 0, 0)
+                                                          : Colors.white,
+                                                      fontSize: 17),
+                                            ),
+                                          )
+                                        : Text(
+                                            messages,
+                                            style: theme()
+                                                .textTheme
+                                                .headline6!
+                                                .copyWith(
+                                                    color: isMe
+                                                        ? Color.fromARGB(
+                                                            255, 3, 0, 0)
+                                                        : Colors.white,
+                                                    fontSize: 17),
+                                          ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: Text(
+                                        time,
                                         style: theme()
                                             .textTheme
                                             .headline6!
@@ -83,51 +93,209 @@ class SingleMessage extends StatelessWidget {
                                                     ? Color.fromARGB(
                                                         255, 3, 0, 0)
                                                     : Colors.white,
-                                                fontSize: 17),
+                                                fontSize: 10),
                                       ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Text(
-                                    time,
-                                    style: theme()
-                                        .textTheme
-                                        .headline6!
-                                        .copyWith(
-                                            color: isMe
-                                                ? Color.fromARGB(255, 3, 0, 0)
-                                                : Colors.white,
-                                            fontSize: 10),
-                                  ),
+                                    ),
+                                  ],
+                                )),
+                          ],
+                        )
+                      : Container(
+                          width: 200,
+                          height: 300,
+                          padding: const EdgeInsets.only(
+                              left: 16.0, right: 16.0, top: 12.0, bottom: 8),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(messages))),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 268.0),
+                                child: Text(
+                                  time,
+                                  style: theme().textTheme.headline6!.copyWith(
+                                      color: Colors.white, fontSize: 10),
                                 ),
-                              ],
-                            )),
-                      ],
-                    )
-                  : Container(
-                      width: 200,
-                      height: 300,
-                      padding: const EdgeInsets.only(
-                          left: 16.0, right: 16.0, top: 12.0, bottom: 8),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(messages))),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 268.0),
-                            child: Text(
-                              time,
-                              style: theme()
-                                  .textTheme
-                                  .headline6!
-                                  .copyWith(color: Colors.white, fontSize: 10),
-                            ),
-                          ),
-                        ],
-                      )),
+                              ),
+                            ],
+                          ))
+                  : !isImage
+                      ? Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                                padding: const EdgeInsets.only(
+                                    left: 16.0,
+                                    right: 16.0,
+                                    top: 12.0,
+                                    bottom: 8),
+                                decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(7.0),
+                                  ),
+                                  color: isMe
+                                      ? theme().backgroundColor
+                                      : theme().primaryColor,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    (messages.length > 17)
+                                        ? Container(
+                                            width: 200,
+                                            child: Text(
+                                              messages,
+                                              style: theme()
+                                                  .textTheme
+                                                  .headline6!
+                                                  .copyWith(
+                                                      color: isMe
+                                                          ? Color.fromARGB(
+                                                              255, 3, 0, 0)
+                                                          : Colors.white,
+                                                      fontSize: 17),
+                                            ),
+                                          )
+                                        : Text(
+                                            messages,
+                                            style: theme()
+                                                .textTheme
+                                                .headline6!
+                                                .copyWith(
+                                                    color: isMe
+                                                        ? Color.fromARGB(
+                                                            255, 3, 0, 0)
+                                                        : Colors.white,
+                                                    fontSize: 17),
+                                          ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: Text(
+                                        time,
+                                        style: theme()
+                                            .textTheme
+                                            .headline6!
+                                            .copyWith(
+                                                color: isMe
+                                                    ? Color.fromARGB(
+                                                        255, 3, 0, 0)
+                                                    : Colors.white,
+                                                fontSize: 10),
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                          ],
+                        )
+                      : Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                                width: 200,
+                                height: 300,
+                                padding: const EdgeInsets.only(
+                                    left: 16.0,
+                                    right: 16.0,
+                                    top: 12.0,
+                                    bottom: 8),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: NetworkImage(messages))),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(top: 268.0),
+                                      child: Text(
+                                        time,
+                                        style: theme()
+                                            .textTheme
+                                            .headline6!
+                                            .copyWith(
+                                                color: Colors.white,
+                                                fontSize: 10),
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                          ],
+                        )
+
+              // !isImage
+              //     ? Row(
+              //         children: [
+              //           Container(
+              //             width: 100,
+              //           ),
+              //           Container(
+              //               padding: const EdgeInsets.only(
+              //                   left: 16.0, right: 16.0, top: 12.0, bottom: 8),
+              //               decoration: BoxDecoration(
+              //                 borderRadius: const BorderRadius.all(
+              //                   Radius.circular(7.0),
+              //                 ),
+              //                 color: isMe
+              //                     ? theme().backgroundColor
+              //                     : theme().primaryColor,
+              //               ),
+              //               child: Column(
+              //                 crossAxisAlignment: CrossAxisAlignment.start,
+              //                 children: [
+              //                   (messages.length > 17)
+              //                       ? Container(
+              //                           width: 200,
+              //                           child: Text(
+              //                             messages,
+              //                             style: theme()
+              //                                 .textTheme
+              //                                 .headline6!
+              //                                 .copyWith(
+              //                                     color: isMe
+              //                                         ? Color.fromARGB(
+              //                                             255, 3, 0, 0)
+              //                                         : Colors.white,
+              //                                     fontSize: 17),
+              //                           ),
+              //                         )
+              //                       : Text(
+              //                           messages,
+              //                           style: theme()
+              //                               .textTheme
+              //                               .headline6!
+              //                               .copyWith(
+              //                                   color: isMe
+              //                                       ? Color.fromARGB(
+              //                                           255, 3, 0, 0)
+              //                                       : Colors.white,
+              //                                   fontSize: 17),
+              //                         ),
+              //                   Padding(
+              //                     padding: const EdgeInsets.only(top: 8.0),
+              //                     child: Text(
+              //                       time,
+              //                       style: theme()
+              //                           .textTheme
+              //                           .headline6!
+              //                           .copyWith(
+              //                               color: isMe
+              //                                   ? Color.fromARGB(255, 3, 0, 0)
+              //                                   : Colors.white,
+              //                               fontSize: 10),
+              //                     ),
+              //                   ),
+              //                 ],
+              //               )),
+              //         ],
+              //       )
+              //     :
             ],
           ),
         )
@@ -135,3 +303,12 @@ class SingleMessage extends StatelessWidget {
     );
   }
 }
+
+
+
+//  Padding(
+//   padding: const EdgeInsets.only(right: 5.0),
+//   child: CircleAvatar(
+//     radius: 15,
+//     backgroundImage: NetworkImage(image),
+//   ))
