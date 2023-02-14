@@ -27,7 +27,6 @@ workflows:
         # set up ios signing certificate
         echo $CERTIFICATE | base64 --decode > '/tmp/certificate.p12'
         keychain add-certificates --certificate '/tmp/certificate.p12' --certificate-password $CERTIFICATE_PASSWORD
-        cat ~/export_options.plist
       - xcode-project use-profiles
       - flutter build ipa --export-options-plist ios/exportOptions.plist
     artifacts:
