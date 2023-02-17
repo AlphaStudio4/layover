@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:layover/blocs/auth/auth_bloc.dart';
 import 'package:layover/blocs/onboarding/onboarding_bloc.dart';
 import 'package:layover/blocs/profile/profile_bloc.dart';
@@ -12,8 +13,6 @@ import 'package:layover/respositories/auth_repository.dart';
 import 'package:layover/config/theme.dart';
 import 'package:layover/respositories/database/database_repository.dart';
 import 'package:layover/respositories/storage/storage_repository.dart';
-import 'package:layover/screens/home/home_screen.dart';
-import 'package:layover/screens/premium/premium_screen.dart';
 import 'package:layover/screens/splash/splash_screen.dart';
 
 import 'blocs/chatlist/chat_bloc.dart';
@@ -77,7 +76,7 @@ class MyApp extends StatelessWidget {
                     )..add(LoadProfile(
                         userId: (context.read<AuthBloc>().state.user!.uid))))
           ],
-          child: MaterialApp(
+          child: GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Layover Dating App',
             theme: theme(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:layover/blocs/onboarding/onboarding_bloc.dart';
 import 'package:layover/config/theme.dart';
@@ -17,8 +18,8 @@ class CustomImageContainer extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 150,
-            width: 100,
+            height: (Get.context!.height / (Get.context!.height / 150)),
+            width: (Get.context!.width / (Get.context!.width / 100)),
             padding: EdgeInsets.all(3.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),

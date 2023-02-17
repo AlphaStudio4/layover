@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:layover/config/theme.dart';
 
 class CustomTextContainer extends StatelessWidget {
@@ -12,9 +13,11 @@ class CustomTextContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 17.0),
+      padding: EdgeInsets.only(
+          top: (Get.context!.height / (Get.context!.height / 17))),
       child: Container(
-        padding: const EdgeInsets.all(12.0),
+        padding:
+            EdgeInsets.all((Get.context!.height / (Get.context!.height / 12))),
         margin: const EdgeInsets.only(top: 5.0, right: 5.0),
         decoration: BoxDecoration(
             gradient: LinearGradient(

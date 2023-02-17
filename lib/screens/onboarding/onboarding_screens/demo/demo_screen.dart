@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:layover/blocs/onboarding/onboarding_bloc.dart';
 import 'package:layover/config/theme.dart';
 import 'package:layover/screens/onboarding/onboarding_screens/picture/pictures_screen.dart';
 import 'package:layover/screens/onboarding/widgets/cbutton.dart';
-import 'package:layover/screens/onboarding/widgets/custom_button.dart';
 import 'package:layover/screens/onboarding/widgets/custom_checkbox.dart';
 import 'package:layover/screens/onboarding/widgets/custom_text_field.dart';
 import 'package:layover/screens/onboarding/widgets/custom_text_header.dart';
@@ -41,8 +41,9 @@ class Demography extends StatelessWidget {
       body: BlocBuilder<OnboardingBloc, OnboardingState>(
           builder: (context, state) {
         if (state is OnboardingLoading) {
-          return const Padding(
-            padding: EdgeInsets.only(top: 15.0),
+          return Padding(
+            padding: EdgeInsets.only(
+                top: (Get.context!.height / (Get.context!.height / 15))),
             child: Center(
               child: CircularProgressIndicator(),
             ),
@@ -66,18 +67,24 @@ class Demography extends StatelessWidget {
                         CustomTextField(
                           hint: 'Enter Your Name...',
                           controller: controller,
-                          padding: const EdgeInsets.only(top: 20),
+                          padding: EdgeInsets.only(
+                              top: (Get.context!.height /
+                                  (Get.context!.height / 20))),
                           validate: validateName,
                           onChanged: (value) {
                             context.read<OnboardingBloc>().add(UpdateUser(
                                 user: state.user.copyWith(name: value)));
                           },
                         ),
-                        const SizedBox(height: 40),
+                        SizedBox(
+                            height: (Get.context!.height /
+                                (Get.context!.height / 40))),
                         const CustomTextHeader(
                           text: "What's Your Gender?",
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(
+                            height: (Get.context!.height /
+                                (Get.context!.height / 20))),
                         CustomCheckbox(
                           text: 'MALE',
                           value: state.user.gender == 'Male',
@@ -94,7 +101,9 @@ class Demography extends StatelessWidget {
                                 user: state.user.copyWith(gender: 'Female')));
                           }),
                         ),
-                        const SizedBox(height: 40),
+                        SizedBox(
+                            height: (Get.context!.height /
+                                (Get.context!.height / 40))),
                         const CustomTextHeader(
                           text: "What's Your Age?",
                         ),
@@ -126,8 +135,9 @@ class Demography extends StatelessWidget {
                           selectedColor: theme().primaryColor,
                           unselectedColor: theme().backgroundColor,
                         ),
-                        const SizedBox(
-                          height: 30,
+                        SizedBox(
+                          height: (Get.context!.height /
+                              (Get.context!.height / 30)),
                         ),
                         (formKey2.currentState != null)
                             ? Cbutton(

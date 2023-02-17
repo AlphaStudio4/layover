@@ -1,11 +1,5 @@
-import 'dart:io';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
-import '../../blocs/onboarding/onboarding_bloc.dart';
+import 'package:get/get.dart';
 import '../../config/theme.dart';
 import '../../widgets/user_image.dart';
 
@@ -20,8 +14,8 @@ class ImageCont extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.only(top: 10, bottom: 10, right: 8.0),
         child: UserImage.small(
-          width: 100,
-          height: 250,
+          width: (Get.context!.width / (Get.context!.width / 100)),
+          height: (Get.context!.height / (Get.context!.height / 250)),
           url: (image != '')
               ? image
               : 'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',

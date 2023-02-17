@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:layover/blocs/onboarding/onboarding_bloc.dart';
 import 'package:layover/config/theme.dart';
 import 'package:layover/screens/onboarding/onboarding_screens/screens.dart';
 import 'package:layover/screens/onboarding/widgets/cbutton.dart';
-import 'package:layover/screens/onboarding/widgets/custom_button.dart';
 import 'package:layover/screens/onboarding/widgets/custom_image_container.dart';
 import 'package:layover/screens/onboarding/widgets/custom_text_header.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
@@ -42,8 +42,10 @@ class Pictures extends StatelessWidget {
           var images = state.user.imageUrls;
           var imagesCount = images.length;
           return Padding(
-              padding:
-                  const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 50.0),
+              padding: EdgeInsets.only(
+                  left: (Get.context!.width / (Get.context!.width / 30)),
+                  right: (Get.context!.width / (Get.context!.width / 30)),
+                  bottom: (Get.context!.height / (Get.context!.height / 50))),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -52,7 +54,8 @@ class Pictures extends StatelessWidget {
                       children: [
                         CustomTextHeader(text: 'Add 2 or More Pictures'),
                         SizedBox(
-                          height: 400,
+                          height: (Get.context!.height /
+                              (Get.context!.height / 400)),
                           child: GridView.builder(
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
@@ -76,8 +79,9 @@ class Pictures extends StatelessWidget {
                           selectedColor: theme().primaryColor,
                           unselectedColor: theme().backgroundColor,
                         ),
-                        const SizedBox(
-                          height: 30,
+                        SizedBox(
+                          height: (Get.context!.height /
+                              (Get.context!.height / 300)),
                         ),
                         (imagesCount < 2)
                             ? Cbutton(text: 'NEXT STEP')

@@ -1,11 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:layover/config/theme.dart';
 import 'package:layover/cubits/signup/signup_cubit.dart';
 import 'package:layover/screens/login/controllers.dart';
-import 'package:layover/screens/onboarding/onboarding_screens/verif/email_verification_screen.dart';
-import 'package:layover/screens/onboarding/widgets/custom_button.dart';
 import 'package:layover/screens/onboarding/widgets/custom_text_field.dart';
 import 'package:layover/screens/onboarding/widgets/custom_text_header.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
@@ -69,8 +68,9 @@ class _EmailState extends State<Email> {
                             email = value;
                           },
                         ),
-                        const SizedBox(
-                          height: 100,
+                        SizedBox(
+                          height: (Get.context!.height /
+                              (Get.context!.height / 100)),
                         ),
                         const CustomTextHeader(
                           text: "Choose a Password",
@@ -96,8 +96,9 @@ class _EmailState extends State<Email> {
                         selectedColor: theme().primaryColor,
                         unselectedColor: theme().backgroundColor,
                       ),
-                      const SizedBox(
-                        height: 30,
+                      SizedBox(
+                        height:
+                            (Get.context!.height / (Get.context!.height / 30)),
                       ),
                       Cbutton(
                           onpressed: (() async {
