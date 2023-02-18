@@ -24,8 +24,7 @@ class DefaultFirebaseOptions {
         return android;
       case TargetPlatform.iOS:
         return ios;
-      case TargetPlatform.macOS:
-        return macos;
+
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -44,39 +43,31 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDxRtVJt4-ij13wgWfQpAvo7WtRi3otdAs',
-    appId: '1:201011016339:web:f8b8d4148e0ae2cc181366',
-    messagingSenderId: '201011016339',
-    projectId: 'layover-070499',
-    authDomain: 'layover-070499.firebaseapp.com',
-    storageBucket: 'layover-070499.appspot.com',
+    apiKey: 'AIzaSyBWtXxO6GxMzEiGBmjXplW-jHCxIsXLLDU',
+    appId: '1:500783283661:web:f013d669e5a697e9a35884',
+    messagingSenderId: '500783283661',
+    projectId: 'layoverdating-app',
+    authDomain: 'layoverdating-app.firebaseapp.com',
+    storageBucket: 'layoverdating-app.appspot.com',
+    measurementId: 'G-H592YFPYTL',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDhQ2RnEugXW-jCuWjSK_TvAYZBkidevBI',
-    appId: '1:201011016339:android:f2695961bcaab016181366',
-    messagingSenderId: '201011016339',
-    projectId: 'layover-070499',
-    storageBucket: 'layover-070499.appspot.com',
+    apiKey: 'AIzaSyCjph6bx3QvOnHRhrgqNSEd8qekUOev5K0',
+    appId: '1:500783283661:android:e5c1c689cf3909c3a35884',
+    messagingSenderId: '500783283661',
+    projectId: 'layoverdating-app',
+    storageBucket: 'layoverdating-app.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDUmsaicCp59mU6lMLlmyl34HgzKZDx4r4',
-    appId: '1:201011016339:ios:571521af851d465a181366',
-    messagingSenderId: '201011016339',
-    projectId: 'layover-070499',
-    storageBucket: 'layover-070499.appspot.com',
-    iosClientId: '201011016339-apl63p64vl27jdp8utkgcu3gnr9pjanf.apps.googleusercontent.com',
-    iosBundleId: 'com.layover.layover',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDUmsaicCp59mU6lMLlmyl34HgzKZDx4r4',
-    appId: '1:201011016339:ios:571521af851d465a181366',
-    messagingSenderId: '201011016339',
-    projectId: 'layover-070499',
-    storageBucket: 'layover-070499.appspot.com',
-    iosClientId: '201011016339-apl63p64vl27jdp8utkgcu3gnr9pjanf.apps.googleusercontent.com',
-    iosBundleId: 'com.layover.layover',
+    apiKey: 'AIzaSyCOlE8mppnnPMm_8nCOnfGLWugDicx2NMw',
+    appId: '1:500783283661:ios:98b98e256f7791f2a35884',
+    messagingSenderId: '500783283661',
+    projectId: 'layoverdating-app',
+    storageBucket: 'layoverdating-app.appspot.com',
+    iosClientId:
+        '500783283661-f7hpuhtr8b0f28g3a9g51ekl12k0ilc5.apps.googleusercontent.com',
+    iosBundleId: 'com.layoverdating.layover',
   );
 }
