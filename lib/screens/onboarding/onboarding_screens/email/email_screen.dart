@@ -137,7 +137,7 @@ class _EmailState extends State<Email> {
                                       bio: 'No bio',
                                       jobTitle: '',
                                       likes: 0,
-                                      status: 'trial');
+                                      status: 'Out of Boundary');
                                   context.read<OnboardingBloc>().add(
                                         StartOnboarding(
                                           user: user,

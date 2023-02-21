@@ -81,7 +81,7 @@ class Pictures extends StatelessWidget {
                         ),
                         SizedBox(
                           height: (Get.context!.height /
-                              (Get.context!.height / 300)),
+                              (Get.context!.height / 30)),
                         ),
                         (imagesCount < 2)
                             ? Cbutton(text: 'NEXT STEP')

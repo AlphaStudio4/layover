@@ -14,7 +14,7 @@ class StartOnboarding extends OnboardingEvent {
     this.user = const User(
         id: '',
         name: '',
-        status: 'trial',
+        status: 'Out of Boundary',
         location: 'You Are Out of Boundary',
         age: 0,
         gender: '',
