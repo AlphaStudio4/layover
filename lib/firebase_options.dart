@@ -24,7 +24,8 @@ class DefaultFirebaseOptions {
         return android;
       case TargetPlatform.iOS:
         return ios;
-
+      case TargetPlatform.macOS:
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -66,8 +67,17 @@ class DefaultFirebaseOptions {
     messagingSenderId: '500783283661',
     projectId: 'layoverdating-app',
     storageBucket: 'layoverdating-app.appspot.com',
-    iosClientId:
-        '500783283661-f7hpuhtr8b0f28g3a9g51ekl12k0ilc5.apps.googleusercontent.com',
+    iosClientId: '500783283661-f7hpuhtr8b0f28g3a9g51ekl12k0ilc5.apps.googleusercontent.com',
+    iosBundleId: 'com.layoverdating.layover',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCOlE8mppnnPMm_8nCOnfGLWugDicx2NMw',
+    appId: '1:500783283661:ios:98b98e256f7791f2a35884',
+    messagingSenderId: '500783283661',
+    projectId: 'layoverdating-app',
+    storageBucket: 'layoverdating-app.appspot.com',
+    iosClientId: '500783283661-f7hpuhtr8b0f28g3a9g51ekl12k0ilc5.apps.googleusercontent.com',
     iosBundleId: 'com.layoverdating.layover',
   );
 }

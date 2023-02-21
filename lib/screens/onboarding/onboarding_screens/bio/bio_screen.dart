@@ -27,7 +27,7 @@ class Biography extends StatefulWidget {
 }
 
 class _BiographyState extends State<Biography> {
-  final formKey3 = GlobalKey<FormState>();
+  static final formKey3 = GlobalKey<FormState>();
   bool isLoading = false;
 
   bool isMusicPressed = false;

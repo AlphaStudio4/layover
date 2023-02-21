@@ -17,7 +17,7 @@ import '../../../../model/model.dart';
 class Demography extends StatelessWidget {
   Demography({Key? key}) : super(key: key);
 
-  final formKey2 = GlobalKey<FormState>();
+  static final formKey2 = GlobalKey<FormState>();
   static const String routeName = '/demo';
 
   static Route route() {
