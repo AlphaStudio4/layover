@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:layover/config/theme.dart';
 import 'package:pay/pay.dart';
 import 'payment_configurations.dart' as payment_configurations;
@@ -71,7 +72,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 88.0),
+                padding: EdgeInsets.only(
+                    top: (Get.context!.height / (Get.context!.height / 88))),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -81,7 +83,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 58.0),
+                              padding: EdgeInsets.only(
+                                  left: (Get.context!.width /
+                                      (Get.context!.width / 58))),
                               child: Text(
                                 'Get Premium',
                                 style: theme().textTheme.headline1!.copyWith(
@@ -90,7 +94,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 38.0, bottom: 40),
+                              padding: EdgeInsets.only(
+                                  left: (Get.context!.width /
+                                      (Get.context!.width / 38)),
+                                  bottom: (Get.context!.height /
+                                      (Get.context!.height / 40))),
                               child: FloatingActionButton(
                                 backgroundColor: Colors.transparent,
                                 elevation: 0,
@@ -118,12 +126,14 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ),
               Column(
                 children: [
-                  const SizedBox(
-                    height: 80,
+                  SizedBox(
+                    height: (Get.context!.height / (Get.context!.height / 80)),
                   ),
-                  SvgPicture.asset('assets/images/pay.svg', height: 200),
-                  const SizedBox(
-                    height: 90,
+                  SvgPicture.asset('assets/images/pay.svg',
+                      height:
+                          (Get.context!.height / (Get.context!.height / 200))),
+                  SizedBox(
+                    height: (Get.context!.height / (Get.context!.height / 90)),
                   ),
                   Text(
                     '\$5.99',
@@ -139,8 +149,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                         fontWeight: FontWeight.w500,
                         fontSize: 22),
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: (Get.context!.height / (Get.context!.height / 10)),
                   ),
                   Center(
                     child: Column(
@@ -152,8 +162,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
                                     paymentConfiguration: snapshot.data!,
                                     paymentItems: paymentItems,
                                     type: GooglePayButtonType.pay,
-                                    width: 300,
-                                    margin: const EdgeInsets.only(top: 35.0),
+                                    width: (Get.context!.width /
+                                        (Get.context!.width / 300)),
+                                    margin: EdgeInsets.only(
+                                        top: (Get.context!.height /
+                                            (Get.context!.height / 35))),
                                     onPaymentResult: onGooglePayResult,
                                     loadingIndicator: const Center(
                                       child: CircularProgressIndicator(),
@@ -173,7 +186,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                             child: CircularProgressIndicator(),
                           ),
                         ),
-                        const SizedBox(height: 15)
+                        SizedBox(
+                            height: (Get.context!.height /
+                                (Get.context!.height / 15)))
                       ],
                     ),
                   )

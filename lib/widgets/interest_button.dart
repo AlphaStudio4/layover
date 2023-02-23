@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:layover/config/theme.dart';
 
 class InterestButton extends StatelessWidget {
@@ -45,7 +46,8 @@ class InterestButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               elevation: 0,
-              fixedSize: const Size(100, 20)),
+              fixedSize: Size((Get.context!.width / (Get.context!.width / 100)),
+                  (Get.context!.height / (Get.context!.height / 20)))),
           child: Container(
             child: Text(
               text,

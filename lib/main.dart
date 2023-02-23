@@ -12,15 +12,17 @@ import 'package:layover/respositories/auth_repository.dart';
 import 'package:layover/config/theme.dart';
 import 'package:layover/respositories/database/database_repository.dart';
 import 'package:layover/respositories/storage/storage_repository.dart';
-import 'package:layover/screens/home/home_screen.dart';
-import 'package:layover/screens/premium/premium_screen.dart';
 import 'package:layover/screens/splash/splash_screen.dart';
 
 import 'blocs/chatlist/chat_bloc.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    name: 'layoverdating-app',
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const MyApp());
 }
@@ -74,7 +76,7 @@ class MyApp extends StatelessWidget {
                     )..add(LoadProfile(
                         userId: (context.read<AuthBloc>().state.user!.uid))))
           ],
-          child: MaterialApp(
+          child: GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Layover Dating App',
             theme: theme(),

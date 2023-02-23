@@ -123,7 +123,7 @@ class UsersScreen extends StatelessWidget {
                                               final int documents =
                                                   qSnap.docs.length;
                                               if (state.user.status ==
-                                                  'trial') {
+                                                  'Out of Boundary') {
                                                 print('lee ${documents}');
                                                 if (documents < 1) {
                                                   Navigator.push(

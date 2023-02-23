@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:layover/config/theme.dart';
 import 'package:layover/model/user_model.dart';
 import 'package:layover/widgets/user_image_small.dart';
@@ -18,11 +19,13 @@ class UserCard extends StatelessWidget {
         );
       }),
       child: Padding(
-        padding: const EdgeInsets.only(right: 8.0, top: 22.0),
+        padding: EdgeInsets.only(
+            right: (Get.context!.width / (Get.context!.width / 8)),
+            top: (Get.context!.height / (Get.context!.height / 20))),
         child: Stack(children: [
           Container(
-            width: 110,
-            height: 200,
+            width: (Get.context!.width / (Get.context!.width / 10)),
+            height: (Get.context!.height / (Get.context!.height / 200)),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(22),
@@ -46,7 +49,7 @@ class UserCard extends StatelessWidget {
               children: [
                 Container(
                   width: 140,
-                  height: 120,
+                  height: (Get.context!.height / (Get.context!.height / 120)),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
@@ -62,7 +65,7 @@ class UserCard extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 12.0),
                       child: SizedBox(
-                        width: 90,
+                        width: (Get.context!.width / (Get.context!.width / 90)),
                         child: Text(
                           user.name,
                           overflow: TextOverflow.ellipsis,
@@ -80,8 +83,10 @@ class UserCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height: 10,
-                            width: 10,
+                            height: (Get.context!.height /
+                                (Get.context!.height / 10)),
+                            width: (Get.context!.width /
+                                (Get.context!.width / 10)),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
                               color: Colors.green,

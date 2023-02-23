@@ -1,10 +1,7 @@
-import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
-import 'package:image_picker/image_picker.dart';
+import 'package:get/get.dart';
 import 'package:layover/blocs/profile/profile_bloc.dart';
 import 'package:layover/config/theme.dart';
 import 'package:layover/screens/onboarding/onboarding_screens/screens.dart';
@@ -12,13 +9,10 @@ import 'package:layover/screens/onboarding/widgets/cbutton.dart';
 import 'package:layover/screens/onboarding/widgets/custom_text_field.dart';
 import 'package:layover/screens/profile/image_cont.dart';
 import 'package:layover/widgets/custom_text_container.dart';
-import 'package:layover/widgets/custom_appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:layover/widgets/user_image.dart';
 
 import '../../blocs/auth/auth_bloc.dart';
-import '../../blocs/onboarding/onboarding_bloc.dart';
-import '../onboarding/onboarding_screens.dart';
 
 class ProfileScreen extends StatefulWidget {
   static const String routeName = '/profile';
@@ -77,8 +71,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
         body: SingleChildScrollView(child:
             BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
           if (state is ProfileLoading) {
-            return const Padding(
-              padding: EdgeInsets.only(top: 85.0),
+            return Padding(
+              padding: EdgeInsets.only(
+                  top: (Get.context!.height / (Get.context!.height / 85))),
               child: Center(
                 child: CircularProgressIndicator(),
               ),
@@ -122,7 +117,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Align(
                         alignment: Alignment.bottomCenter,
                         child: Padding(
-                          padding: const EdgeInsets.only(bottom: 40.0),
+                          padding: EdgeInsets.only(
+                              bottom: (Get.context!.height /
+                                  (Get.context!.height / 40))),
                           child: Text(
                             state.user.name,
                             style: theme()
@@ -290,14 +287,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ],
                               ),
                             ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height:
+                            (Get.context!.height / (Get.context!.height / 20)),
                       ),
                       const RowWithIcon(title: 'Pictures'),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: SizedBox(
-                            height: 125,
+                            height: (Get.context!.height /
+                                (Get.context!.height / 125)),
                             child: Row(children: [
                               (state.user.imageUrls.length > 0)
                                   ? ImageCont(
@@ -340,7 +339,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               children: [
                                 const RowWithIcon(title: 'My Interests'),
                                 SizedBox(
-                                  height: 92,
+                                  height: (Get.context!.height /
+                                      (Get.context!.height / 92)),
                                   child: ListView.builder(
                                     shrinkWrap: true,
                                     scrollDirection: Axis.horizontal,
@@ -410,7 +410,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         },
                         child: Center(
                           child: Container(
-                            width: 400,
+                            width: (Get.context!.width /
+                                (Get.context!.width / 400)),
                             decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [
                                   theme().primaryColor,

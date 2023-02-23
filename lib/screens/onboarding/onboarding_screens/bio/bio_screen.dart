@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:layover/blocs/onboarding/onboarding_bloc.dart';
 import 'package:layover/config/theme.dart';
 import 'package:layover/screens/home/home_screen.dart';
 import 'package:layover/screens/onboarding/widgets/cbutton.dart';
-import 'package:layover/screens/onboarding/widgets/custom_button.dart';
 import 'package:layover/screens/onboarding/widgets/custom_text_field.dart';
 import 'package:layover/screens/onboarding/widgets/custom_text_header.dart';
 import 'package:layover/widgets/interest_button.dart';
@@ -27,7 +27,7 @@ class Biography extends StatefulWidget {
 }
 
 class _BiographyState extends State<Biography> {
-  final formKey3 = GlobalKey<FormState>();
+  static final formKey3 = GlobalKey<FormState>();
   bool isLoading = false;
 
   bool isMusicPressed = false;
@@ -54,8 +54,11 @@ class _BiographyState extends State<Biography> {
         }
         if (state is OnboardingLoaded) {
           return Padding(
-              padding: const EdgeInsets.only(
-                  left: 30.0, right: 30.0, bottom: 50.0, top: 90),
+              padding: EdgeInsets.only(
+                  left: (Get.context!.width / (Get.context!.width / 30)),
+                  right: (Get.context!.width / (Get.context!.width / 30)),
+                  bottom: (Get.context!.height / (Get.context!.height / 50)),
+                  top: (Get.context!.height / (Get.context!.height / 90))),
               child: Form(
                 key: formKey3,
                 child: Column(
@@ -80,8 +83,9 @@ class _BiographyState extends State<Biography> {
                                   user: state.user.copyWith(bio: value)));
                             },
                           ),
-                          const SizedBox(
-                            height: 40,
+                          SizedBox(
+                            height: (Get.context!.height /
+                                (Get.context!.height / 40)),
                           ),
                           CustomTextHeader(
                             text: "What's Your Job?",
@@ -96,8 +100,9 @@ class _BiographyState extends State<Biography> {
                                   user: state.user.copyWith(jobTitle: value)));
                             },
                           ),
-                          const SizedBox(
-                            height: 40,
+                          SizedBox(
+                            height: (Get.context!.height /
+                                (Get.context!.height / 40)),
                           ),
                           CustomTextHeader(text: "What Are Your Interest? "),
                           Row(
@@ -219,8 +224,9 @@ class _BiographyState extends State<Biography> {
                             selectedColor: theme().primaryColor,
                             unselectedColor: theme().backgroundColor,
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: (Get.context!.height /
+                                (Get.context!.height / 30)),
                           ),
                           (formKey3.currentState != null)
                               ? Cbutton(

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:layover/config/theme.dart';
 import 'package:layover/screens/home/home_screen.dart';
 import 'package:layover/screens/onboarding/onboarding_screens/screens.dart';
@@ -54,27 +55,33 @@ class Start extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          height: 170,
-                          width: 170,
+                          height: (Get.context!.height /
+                              (Get.context!.height / 170)),
+                          width:
+                              (Get.context!.width / (Get.context!.width / 170)),
                           child: Image.asset(
                             'assets/images/icon.png',
                             color: Color.fromARGB(235, 11, 80, 177),
                           ),
                         ),
-                        const SizedBox(height: 50),
+                        SizedBox(
+                            height: (Get.context!.height /
+                                (Get.context!.height / 50))),
                         Text('Welcome to Layover',
                             style: Theme.of(context)
                                 .textTheme
                                 .headline2!
                                 .copyWith(color: Colors.white, fontFamily: '')),
-                        const SizedBox(height: 20),
+                        SizedBox(
+                            height: (Get.context!.height /
+                                (Get.context!.height / 20))),
                         Text(
                           'Dating in layover can be fun, and you should have the best time possible with your match. With layover dating app, you can browse other profiles and find matches that are within you in airport!',
                           style: Theme.of(context)
                               .textTheme
                               .headline6!
                               .copyWith(
-                                  height: 1.3,
+                                  height: 1.5,
                                   fontSize: 18,
                                   color: Colors.white,
                                   fontFamily: ''),
@@ -82,9 +89,13 @@ class Start extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 30),
+                    SizedBox(
+                        height:
+                            (Get.context!.height / (Get.context!.height / 30))),
                     Padding(
-                      padding: const EdgeInsets.only(top: 36.0),
+                      padding: EdgeInsets.only(
+                          top: (Get.context!.height /
+                              (Get.context!.height / 36))),
                       child: Cbutton(
                         onpressed: () {
                           Navigator.pushNamed(context, '/email');
@@ -92,7 +103,9 @@ class Start extends StatelessWidget {
                         text: 'START',
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(
+                        height:
+                            (Get.context!.height / (Get.context!.height / 5))),
                     DecoratedBox(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25),
