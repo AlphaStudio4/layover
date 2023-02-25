@@ -33,11 +33,6 @@ class Start extends StatelessWidget {
         Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage('assets/images/relation.jpg'))),
         ),
         Container(
           height: MediaQuery.of(context).size.height,
@@ -45,9 +40,15 @@ class Start extends StatelessWidget {
           color: Color.fromARGB(181, 73, 54, 54),
         ),
         Container(
+          color: Colors.white,
           child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 30.0, right: 30.0, top: 150, bottom: 50),
+              padding: EdgeInsets.only(
+                  left: 30.0,
+                  right: 30.0,
+                  top: (MediaQuery.of(context).size.height /
+                      (MediaQuery.of(context).size.height / 125)),
+                  bottom: (MediaQuery.of(context).size.height /
+                      (MediaQuery.of(context).size.height / 50))),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -55,26 +56,28 @@ class Start extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          height: (Get.context!.height /
-                              (Get.context!.height / 170)),
-                          width:
-                              (Get.context!.width / (Get.context!.width / 170)),
+                          height: (MediaQuery.of(context).size.height /
+                              (MediaQuery.of(context).size.height / 150)),
+                          width: (MediaQuery.of(context).size.width /
+                              (MediaQuery.of(context).size.width / 150)),
                           child: Image.asset(
                             'assets/images/icon.png',
                             color: Color.fromARGB(235, 11, 80, 177),
                           ),
                         ),
                         SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 50))),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 50))),
                         Text('Welcome to Layover',
                             style: Theme.of(context)
                                 .textTheme
                                 .headline2!
-                                .copyWith(color: Colors.white, fontFamily: '')),
+                                .copyWith(
+                                    color: theme().primaryColor,
+                                    fontFamily: '')),
                         SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 20))),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 18))),
                         Text(
                           'Dating in layover can be fun, and you should have the best time possible with your match. With layover dating app, you can browse other profiles and find matches that are within you in airport!',
                           style: Theme.of(context)
@@ -82,20 +85,23 @@ class Start extends StatelessWidget {
                               .headline6!
                               .copyWith(
                                   height: 1.5,
-                                  fontSize: 18,
-                                  color: Colors.white,
+                                  fontSize:
+                                      (MediaQuery.of(context).size.height /
+                                          (MediaQuery.of(context).size.height /
+                                              17)),
+                                  color: theme().secondaryHeaderColor,
                                   fontFamily: ''),
                           textAlign: TextAlign.center,
                         ),
                       ],
                     ),
                     SizedBox(
-                        height:
-                            (Get.context!.height / (Get.context!.height / 30))),
+                        height: (MediaQuery.of(context).size.height /
+                            (MediaQuery.of(context).size.height / 25))),
                     Padding(
                       padding: EdgeInsets.only(
-                          top: (Get.context!.height /
-                              (Get.context!.height / 36))),
+                          top: (MediaQuery.of(context).size.height /
+                              (MediaQuery.of(context).size.height / 36))),
                       child: Cbutton(
                         onpressed: () {
                           Navigator.pushNamed(context, '/email');
@@ -104,12 +110,12 @@ class Start extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                        height:
-                            (Get.context!.height / (Get.context!.height / 5))),
+                        height: (MediaQuery.of(context).size.height /
+                            (MediaQuery.of(context).size.height / 5))),
                     DecoratedBox(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25),
-                          border: Border.all(color: Colors.white)),
+                          border: Border.all(color: theme().primaryColor)),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             elevation: 0, primary: Colors.transparent),
@@ -127,10 +133,13 @@ class Start extends StatelessWidget {
                               style: theme()
                                   .textTheme
                                   .headline4!
-                                  .copyWith(color: Colors.white),
+                                  .copyWith(color: theme().primaryColor),
                             ))),
                       ),
                     ),
+                    SizedBox(
+                        height: (MediaQuery.of(context).size.height /
+                            (MediaQuery.of(context).size.height / 10))),
                   ])),
         ),
       ]),

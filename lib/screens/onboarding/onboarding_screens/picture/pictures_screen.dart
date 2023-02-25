@@ -43,9 +43,12 @@ class Pictures extends StatelessWidget {
           var imagesCount = images.length;
           return Padding(
               padding: EdgeInsets.only(
-                  left: (Get.context!.width / (Get.context!.width / 30)),
-                  right: (Get.context!.width / (Get.context!.width / 30)),
-                  bottom: (Get.context!.height / (Get.context!.height / 50))),
+                  left: (MediaQuery.of(context).size.width /
+                      (MediaQuery.of(context).size.width / 30)),
+                  right: (MediaQuery.of(context).size.width /
+                      (MediaQuery.of(context).size.width / 30)),
+                  bottom: (MediaQuery.of(context).size.height /
+                      (MediaQuery.of(context).size.height / 50))),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -54,8 +57,8 @@ class Pictures extends StatelessWidget {
                       children: [
                         CustomTextHeader(text: 'Add 2 or More Pictures'),
                         SizedBox(
-                          height: (Get.context!.height /
-                              (Get.context!.height / 400)),
+                          height: (MediaQuery.of(context).size.height /
+                              (MediaQuery.of(context).size.height / 400)),
                           child: GridView.builder(
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
@@ -80,8 +83,8 @@ class Pictures extends StatelessWidget {
                           unselectedColor: theme().backgroundColor,
                         ),
                         SizedBox(
-                          height: (Get.context!.height /
-                              (Get.context!.height / 30)),
+                          height: (MediaQuery.of(context).size.height /
+                              (MediaQuery.of(context).size.height / 30)),
                         ),
                         (imagesCount < 2)
                             ? Cbutton(text: 'NEXT STEP')

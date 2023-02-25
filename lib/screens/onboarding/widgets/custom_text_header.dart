@@ -17,7 +17,8 @@ class CustomTextHeader extends StatelessWidget {
       text,
       style: Theme.of(context).textTheme.headline2!.copyWith(
           fontWeight: FontWeight.normal,
-          fontSize: 30,
+          fontSize: (MediaQuery.of(context).size.height /
+              (MediaQuery.of(context).size.height / 26)),
           height: 1.4,
           wordSpacing: 3,
           color: Color.fromARGB(255, 35, 41, 82)),

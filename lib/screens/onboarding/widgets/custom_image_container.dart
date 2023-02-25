@@ -18,8 +18,10 @@ class CustomImageContainer extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: (Get.context!.height / (Get.context!.height / 150)),
-            width: (Get.context!.width / (Get.context!.width / 100)),
+            height: (MediaQuery.of(context).size.height /
+                (MediaQuery.of(context).size.height / 150)),
+            width: (MediaQuery.of(context).size.width /
+                (MediaQuery.of(context).size.width / 100)),
             padding: EdgeInsets.all(3.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),

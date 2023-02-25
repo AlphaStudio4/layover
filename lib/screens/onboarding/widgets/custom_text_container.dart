@@ -14,10 +14,11 @@ class CustomTextContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          top: (Get.context!.height / (Get.context!.height / 17))),
+          top: (MediaQuery.of(context).size.height /
+              (MediaQuery.of(context).size.height / 17))),
       child: Container(
-        padding:
-            EdgeInsets.all((Get.context!.height / (Get.context!.height / 12))),
+        padding: EdgeInsets.all((MediaQuery.of(context).size.height /
+            (MediaQuery.of(context).size.height / 12))),
         margin: const EdgeInsets.only(top: 5.0, right: 5.0),
         decoration: BoxDecoration(
             gradient: LinearGradient(

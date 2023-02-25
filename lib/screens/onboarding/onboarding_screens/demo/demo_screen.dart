@@ -11,9 +11,6 @@ import 'package:layover/screens/onboarding/widgets/custom_text_field.dart';
 import 'package:layover/screens/onboarding/widgets/custom_text_header.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-import '../../../../cubits/signup/signup_cubit.dart';
-import '../../../../model/model.dart';
-
 class Demography extends StatelessWidget {
   Demography({Key? key}) : super(key: key);
 
@@ -43,7 +40,8 @@ class Demography extends StatelessWidget {
         if (state is OnboardingLoading) {
           return Padding(
             padding: EdgeInsets.only(
-                top: (Get.context!.height / (Get.context!.height / 15))),
+                top: (MediaQuery.of(context).size.height /
+                    (MediaQuery.of(context).size.height / 15))),
             child: Center(
               child: CircularProgressIndicator(),
             ),
@@ -51,8 +49,13 @@ class Demography extends StatelessWidget {
         }
         if (state is OnboardingLoaded) {
           return Padding(
-            padding:
-                const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 50.0),
+            padding: EdgeInsets.only(
+                left: (MediaQuery.of(context).size.height /
+                    (MediaQuery.of(context).size.height / 30)),
+                right: (MediaQuery.of(context).size.height /
+                    (MediaQuery.of(context).size.height / 30)),
+                bottom: (MediaQuery.of(context).size.height /
+                    (MediaQuery.of(context).size.height / 50))),
             child: Form(
               key: formKey2,
               child: Column(
@@ -68,8 +71,8 @@ class Demography extends StatelessWidget {
                           hint: 'Enter Your Name...',
                           controller: controller,
                           padding: EdgeInsets.only(
-                              top: (Get.context!.height /
-                                  (Get.context!.height / 20))),
+                              top: (MediaQuery.of(context).size.height /
+                                  (MediaQuery.of(context).size.height / 20))),
                           validate: validateName,
                           onChanged: (value) {
                             context.read<OnboardingBloc>().add(UpdateUser(
@@ -77,14 +80,14 @@ class Demography extends StatelessWidget {
                           },
                         ),
                         SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 40))),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 40))),
                         const CustomTextHeader(
                           text: "What's Your Gender?",
                         ),
                         SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 20))),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 20))),
                         CustomCheckbox(
                           text: 'MALE',
                           value: state.user.gender == 'Male',
@@ -102,8 +105,8 @@ class Demography extends StatelessWidget {
                           }),
                         ),
                         SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 40))),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 40))),
                         const CustomTextHeader(
                           text: "What's Your Age?",
                         ),
@@ -136,8 +139,8 @@ class Demography extends StatelessWidget {
                           unselectedColor: theme().backgroundColor,
                         ),
                         SizedBox(
-                          height: (Get.context!.height /
-                              (Get.context!.height / 30)),
+                          height: (MediaQuery.of(context).size.height /
+                              (MediaQuery.of(context).size.height / 30)),
                         ),
                         (formKey2.currentState != null)
                             ? Cbutton(

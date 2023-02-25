@@ -76,7 +76,7 @@ class MyApp extends StatelessWidget {
                     )..add(LoadProfile(
                         userId: (context.read<AuthBloc>().state.user!.uid))))
           ],
-          child: GetMaterialApp(
+          child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Layover Dating App',
             theme: theme(),

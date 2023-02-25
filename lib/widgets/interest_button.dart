@@ -46,8 +46,11 @@ class InterestButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               elevation: 0,
-              fixedSize: Size((Get.context!.width / (Get.context!.width / 100)),
-                  (Get.context!.height / (Get.context!.height / 20)))),
+              fixedSize: Size(
+                  (MediaQuery.of(context).size.width /
+                      (MediaQuery.of(context).size.width / 100)),
+                  (MediaQuery.of(context).size.height /
+                      (MediaQuery.of(context).size.height / 20)))),
           child: Container(
             child: Text(
               text,

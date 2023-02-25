@@ -55,10 +55,14 @@ class _BiographyState extends State<Biography> {
         if (state is OnboardingLoaded) {
           return Padding(
               padding: EdgeInsets.only(
-                  left: (Get.context!.width / (Get.context!.width / 30)),
-                  right: (Get.context!.width / (Get.context!.width / 30)),
-                  bottom: (Get.context!.height / (Get.context!.height / 50)),
-                  top: (Get.context!.height / (Get.context!.height / 90))),
+                  left: (MediaQuery.of(context).size.width /
+                      (MediaQuery.of(context).size.width / 30)),
+                  right: (MediaQuery.of(context).size.width /
+                      (MediaQuery.of(context).size.width / 30)),
+                  bottom: (MediaQuery.of(context).size.height /
+                      (MediaQuery.of(context).size.height / 50)),
+                  top: (MediaQuery.of(context).size.height /
+                      (MediaQuery.of(context).size.height / 90))),
               child: Form(
                 key: formKey3,
                 child: Column(
@@ -84,8 +88,8 @@ class _BiographyState extends State<Biography> {
                             },
                           ),
                           SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 40)),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 40)),
                           ),
                           CustomTextHeader(
                             text: "What's Your Job?",
@@ -101,8 +105,8 @@ class _BiographyState extends State<Biography> {
                             },
                           ),
                           SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 40)),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 40)),
                           ),
                           CustomTextHeader(text: "What Are Your Interest? "),
                           Row(
@@ -225,8 +229,8 @@ class _BiographyState extends State<Biography> {
                             unselectedColor: theme().backgroundColor,
                           ),
                           SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 30)),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 30)),
                           ),
                           (formKey3.currentState != null)
                               ? Cbutton(

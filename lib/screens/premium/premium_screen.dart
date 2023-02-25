@@ -73,7 +73,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    top: (Get.context!.height / (Get.context!.height / 88))),
+                    top: (MediaQuery.of(context).size.height /
+                        (MediaQuery.of(context).size.height / 88))),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -84,8 +85,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                           children: [
                             Padding(
                               padding: EdgeInsets.only(
-                                  left: (Get.context!.width /
-                                      (Get.context!.width / 58))),
+                                  left: (MediaQuery.of(context).size.width /
+                                      (MediaQuery.of(context).size.width /
+                                          58))),
                               child: Text(
                                 'Get Premium',
                                 style: theme().textTheme.headline1!.copyWith(
@@ -95,10 +97,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
                             ),
                             Padding(
                               padding: EdgeInsets.only(
-                                  left: (Get.context!.width /
-                                      (Get.context!.width / 38)),
-                                  bottom: (Get.context!.height /
-                                      (Get.context!.height / 40))),
+                                  left: (MediaQuery.of(context).size.width /
+                                      (MediaQuery.of(context).size.width / 38)),
+                                  bottom: (MediaQuery.of(context).size.height /
+                                      (MediaQuery.of(context).size.height /
+                                          40))),
                               child: FloatingActionButton(
                                 backgroundColor: Colors.transparent,
                                 elevation: 0,
@@ -127,13 +130,15 @@ class _PremiumScreenState extends State<PremiumScreen> {
               Column(
                 children: [
                   SizedBox(
-                    height: (Get.context!.height / (Get.context!.height / 80)),
+                    height: (MediaQuery.of(context).size.height /
+                        (MediaQuery.of(context).size.height / 80)),
                   ),
                   SvgPicture.asset('assets/images/pay.svg',
-                      height:
-                          (Get.context!.height / (Get.context!.height / 200))),
+                      height: (MediaQuery.of(context).size.height /
+                          (MediaQuery.of(context).size.height / 200))),
                   SizedBox(
-                    height: (Get.context!.height / (Get.context!.height / 90)),
+                    height: (MediaQuery.of(context).size.height /
+                        (MediaQuery.of(context).size.height / 90)),
                   ),
                   Text(
                     '\$5.99',
@@ -150,7 +155,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                         fontSize: 22),
                   ),
                   SizedBox(
-                    height: (Get.context!.height / (Get.context!.height / 10)),
+                    height: (MediaQuery.of(context).size.height /
+                        (MediaQuery.of(context).size.height / 10)),
                   ),
                   Center(
                     child: Column(
@@ -162,11 +168,17 @@ class _PremiumScreenState extends State<PremiumScreen> {
                                     paymentConfiguration: snapshot.data!,
                                     paymentItems: paymentItems,
                                     type: GooglePayButtonType.pay,
-                                    width: (Get.context!.width /
-                                        (Get.context!.width / 300)),
+                                    width: (MediaQuery.of(context).size.width /
+                                        (MediaQuery.of(context).size.width /
+                                            300)),
                                     margin: EdgeInsets.only(
-                                        top: (Get.context!.height /
-                                            (Get.context!.height / 35))),
+                                        top: (MediaQuery.of(context)
+                                                .size
+                                                .height /
+                                            (MediaQuery.of(context)
+                                                    .size
+                                                    .height /
+                                                35))),
                                     onPaymentResult: onGooglePayResult,
                                     loadingIndicator: const Center(
                                       child: CircularProgressIndicator(),
@@ -187,8 +199,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                           ),
                         ),
                         SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 15)))
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 15)))
                       ],
                     ),
                   )

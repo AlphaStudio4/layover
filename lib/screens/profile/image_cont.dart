@@ -14,8 +14,10 @@ class ImageCont extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.only(top: 10, bottom: 10, right: 8.0),
         child: UserImage.small(
-          width: (Get.context!.width / (Get.context!.width / 100)),
-          height: (Get.context!.height / (Get.context!.height / 250)),
+          width: (MediaQuery.of(context).size.width /
+              (MediaQuery.of(context).size.width / 100)),
+          height: (MediaQuery.of(context).size.height /
+              (MediaQuery.of(context).size.height / 250)),
           url: (image != '')
               ? image
               : 'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',

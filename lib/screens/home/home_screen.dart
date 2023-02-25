@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:layover/blocs/swipe/swipe_bloc.dart';
 import 'package:geofence_flutter/geofence_flutter.dart';
 import 'package:layover/config/theme.dart';
+import 'package:layover/screens/home/locations/get_locations9%20copy.dart';
 import 'package:layover/screens/home/locations/locations.dart';
 import '../../blocs/profile/profile_bloc.dart';
 import '../../widgets/custom_appbar.dart';
@@ -80,6 +81,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   StreamSubscription<GeofenceEvented6>? geofenceEventStream8;
   StreamSubscription<GeofenceEvented7>? geofenceEventStream9;
   StreamSubscription<GeofenceEvented8>? geofenceEventStream10;
+  StreamSubscription<GeofenceEvented9>? geofenceEventStream11;
   String geofenceEvent = '';
   bool isRefreshing = false;
   User? user = FirebaseAuth.instance.currentUser;
@@ -898,6 +900,80 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                                                       isRefreshing =
                                                                           false;
                                                                     });
+
+                                                                    Future
+                                                                        getLocation11() async {
+                                                                      print(
+                                                                          "start");
+                                                                      double
+                                                                          latitude10 =
+                                                                          36.51245260015558;
+                                                                      double
+                                                                          longitude10 =
+                                                                          -93.71126474138045;
+                                                                      double
+                                                                          radius1 =
+                                                                          8000;
+                                                                      final String
+                                                                          locationName =
+                                                                          "Testing Area";
+                                                                      await Geofenced9.startGeofenceService(
+                                                                          pointedLatitude: latitude10
+                                                                              .toString(),
+                                                                          pointedLongitude: longitude10
+                                                                              .toString(),
+                                                                          radiusMeter: radius1
+                                                                              .toString(),
+                                                                          eventPeriodInSeconds:
+                                                                              10);
+                                                                      if (geofenceEventStream10 ==
+                                                                          null) {
+                                                                        geofenceEventStream11 =
+                                                                            Geofenced9.getGeofenceStreamed9()?.listen((GeofenceEvented9
+                                                                                event) {
+                                                                          print(
+                                                                              '${event.toString()} 10');
+                                                                          setState(
+                                                                              () {
+                                                                            geofenceEvent =
+                                                                                event.toString();
+                                                                          });
+                                                                        });
+                                                                      }
+                                                                      if (geofenceEvent ==
+                                                                          "GeofenceEvent.enter") {
+                                                                        FirebaseFirestore
+                                                                            .instance
+                                                                            .collection('users')
+                                                                            .doc(user!.uid)
+                                                                            .update({
+                                                                          'location':
+                                                                              locationName,
+                                                                        });
+                                                                        setState(
+                                                                            () {
+                                                                          isRefreshing =
+                                                                              false;
+                                                                        });
+                                                                      } else if (geofenceEvent ==
+                                                                          "GeofenceEvent.exit") {
+                                                                        FirebaseFirestore
+                                                                            .instance
+                                                                            .collection('users')
+                                                                            .doc(user!.uid)
+                                                                            .update({
+                                                                          'location':
+                                                                              'You Are Out of Boundary',
+                                                                        });
+                                                                        setState(
+                                                                            () {
+                                                                          isRefreshing =
+                                                                              false;
+                                                                        });
+                                                                      }
+                                                                    }
+
+                                                                    getLocation11();
                                                                   }
                                                                 }
 

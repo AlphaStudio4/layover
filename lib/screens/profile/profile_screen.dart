@@ -73,7 +73,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           if (state is ProfileLoading) {
             return Padding(
               padding: EdgeInsets.only(
-                  top: (Get.context!.height / (Get.context!.height / 85))),
+                  top: (MediaQuery.of(context).size.height /
+                      (MediaQuery.of(context).size.height / 85))),
               child: Center(
                 child: CircularProgressIndicator(),
               ),
@@ -118,8 +119,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         alignment: Alignment.bottomCenter,
                         child: Padding(
                           padding: EdgeInsets.only(
-                              bottom: (Get.context!.height /
-                                  (Get.context!.height / 40))),
+                              bottom: (MediaQuery.of(context).size.height /
+                                  (MediaQuery.of(context).size.height / 40))),
                           child: Text(
                             state.user.name,
                             style: theme()
@@ -288,15 +289,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                             ),
                       SizedBox(
-                        height:
-                            (Get.context!.height / (Get.context!.height / 20)),
+                        height: (MediaQuery.of(context).size.height /
+                            (MediaQuery.of(context).size.height / 20)),
                       ),
                       const RowWithIcon(title: 'Pictures'),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: SizedBox(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 125)),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 125)),
                             child: Row(children: [
                               (state.user.imageUrls.length > 0)
                                   ? ImageCont(
@@ -339,8 +340,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               children: [
                                 const RowWithIcon(title: 'My Interests'),
                                 SizedBox(
-                                  height: (Get.context!.height /
-                                      (Get.context!.height / 92)),
+                                  height: (MediaQuery.of(context).size.height /
+                                      (MediaQuery.of(context).size.height /
+                                          92)),
                                   child: ListView.builder(
                                     shrinkWrap: true,
                                     scrollDirection: Axis.horizontal,
@@ -410,8 +412,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         },
                         child: Center(
                           child: Container(
-                            width: (Get.context!.width /
-                                (Get.context!.width / 400)),
+                            width: (MediaQuery.of(context).size.width /
+                                (MediaQuery.of(context).size.width / 400)),
                             decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [
                                   theme().primaryColor,

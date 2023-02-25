@@ -69,8 +69,8 @@ class _EmailState extends State<Email> {
                           },
                         ),
                         SizedBox(
-                          height: (Get.context!.height /
-                              (Get.context!.height / 100)),
+                          height: (MediaQuery.of(context).size.height /
+                              (MediaQuery.of(context).size.height / 100)),
                         ),
                         const CustomTextHeader(
                           text: "Choose a Password",
@@ -97,8 +97,8 @@ class _EmailState extends State<Email> {
                         unselectedColor: theme().backgroundColor,
                       ),
                       SizedBox(
-                        height:
-                            (Get.context!.height / (Get.context!.height / 30)),
+                        height: (MediaQuery.of(context).size.height /
+                            (MediaQuery.of(context).size.height / 30)),
                       ),
                       Cbutton(
                           onpressed: (() async {

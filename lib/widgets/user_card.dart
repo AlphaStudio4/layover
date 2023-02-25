@@ -20,12 +20,16 @@ class UserCard extends StatelessWidget {
       }),
       child: Padding(
         padding: EdgeInsets.only(
-            right: (Get.context!.width / (Get.context!.width / 8)),
-            top: (Get.context!.height / (Get.context!.height / 20))),
+            right: (MediaQuery.of(context).size.width /
+                (MediaQuery.of(context).size.width / 8)),
+            top: (MediaQuery.of(context).size.height /
+                (MediaQuery.of(context).size.height / 20))),
         child: Stack(children: [
           Container(
-            width: (Get.context!.width / (Get.context!.width / 10)),
-            height: (Get.context!.height / (Get.context!.height / 200)),
+            width: (MediaQuery.of(context).size.width /
+                (MediaQuery.of(context).size.width / 10)),
+            height: (MediaQuery.of(context).size.height /
+                (MediaQuery.of(context).size.height / 200)),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(22),
@@ -49,7 +53,8 @@ class UserCard extends StatelessWidget {
               children: [
                 Container(
                   width: 140,
-                  height: (Get.context!.height / (Get.context!.height / 120)),
+                  height: (MediaQuery.of(context).size.height /
+                      (MediaQuery.of(context).size.height / 120)),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
@@ -65,7 +70,8 @@ class UserCard extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 12.0),
                       child: SizedBox(
-                        width: (Get.context!.width / (Get.context!.width / 90)),
+                        width: (MediaQuery.of(context).size.width /
+                            (MediaQuery.of(context).size.width / 90)),
                         child: Text(
                           user.name,
                           overflow: TextOverflow.ellipsis,
@@ -83,10 +89,10 @@ class UserCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height: (Get.context!.height /
-                                (Get.context!.height / 10)),
-                            width: (Get.context!.width /
-                                (Get.context!.width / 10)),
+                            height: (MediaQuery.of(context).size.height /
+                                (MediaQuery.of(context).size.height / 10)),
+                            width: (MediaQuery.of(context).size.width /
+                                (MediaQuery.of(context).size.width / 10)),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
                               color: Colors.green,
